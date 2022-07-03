@@ -1,0 +1,31 @@
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'items/style.css' %}">
+</head>
+<body>
+    <header><h1>przedmiot</h1></header>
+
+        <p id="p1">{{ item }} (id={{ item.id }})<br>
+        Opis: {{item.description}}<br>
+        Cena: {{item.price}}<br>
+        Rzadkość:    {{item.property.rarity}}<br>
+        Zużycie:    {{item.property.wear}}<br>
+        Obrażenia:    {{item.property.damage}}<br>
+        Blokowanie obrazeń: {{item.property.damage_blocked}}<br>
+        Kategoria: {{item.category.category}}<br>
+        Zasięg: {{item.category.range}}<br>
+        Sposób zdobycia: {{item.category.origin}}<br>
+        Możliwość wytwarzania: {{item.category.craftable}}<br>
+        {% if item.shop == null %}
+        Właściciel: {{item.owner}}<br>
+        {% else %}
+        Sklep: {{item.shop}}<br>
+        {% endif %}
+        Data zdobycia: {{item.created_date}}<br>
+
+        <a href="{% url 'edycja' item.id %}">Edytuj</a>
+        <a href="{% url 'usun' item.id %}">Usuń</a>
+        </p>
+</body>
+</html>

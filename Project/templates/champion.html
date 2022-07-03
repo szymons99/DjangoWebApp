@@ -1,0 +1,25 @@
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'items/style.css' %}">
+</head>
+<body>
+    <header><h1>lista postaci</h1></header>
+    <p>Ilość postaci: {{ ile }}</p>
+
+    {% for champ in champs %}
+        <p id="p1">{{ champ }}<br>
+        Level: {{champ.level}}<br>
+        Class: {{champ.champ_class}}<br>
+        Guild: {{champ.guild}}<br>
+        {% endfor %}
+        {% for shop in shops %}
+        Nazwa: {{shop.name}}<br>
+        Właściciel: {{shop.owner}}<br>
+        Lokalizacja: {{shop.location}}<br>
+        Budżet: {{shop.money}}<br>
+        </p>
+    {% endfor %}<br>
+    <a href="/">Strona główna</a>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pl">
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div id="main">
+        <header></header>
+        <section id="lewy">
+            <a href="/">strona główna</a>
+        </section>
+        <section id="prawy">
+            <article>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form }}
+                    <button type="submit">Edytuj przedmiot</button>
+                </form>
+            </article>
+        </section>
+    </div>
+</body>
+</html>

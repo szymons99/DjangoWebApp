@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'home/style.css' %}">
+</head>
+<body>
+<header><h1>Strona główna</h1></header>
+<div>
+{% if user.is_authenticated %}
+
+
+  <h1><a id="a3", href="{% url 'logout' %}">Log Out</a></h1>
+  <h1><a id="a4", href="{% url 'password_reset' %}">Reset Password</a></h1>
+    <h1><a id="a1", href="{% url 'item_list' %}">Lista przedmiotów</a></h1>
+  <h1><a id="a2", href="{% url 'champions' %}">Postacie i sklepy</a></h1>
+{% else %}
+  <h1 id="h1">You are not logged in</h1>
+  <h1><a id="a5", href="{% url 'login' %}">Log In</a></h1>
+  <h1><a id="a6", href="{% url 'signup' %}">Sign Up</a></h1>
+  <h1><a id="a7", href="{% url 'item_list' %}">Lista przedmiotów</a></h1>
+  <h1><a id="a8", href="{% url 'champions' %}">Postacie i sklepy</a></h1>
+{% endif %}
+  <aside>  </aside>
+</div>
+{% endblock %}
+</body>
+</html>
