@@ -1,2 +1,2 @@
 # DjangoWebApp
- Site about game items made with Django framework
+ Site made using Django framework. Web database application about items and their specifications.
