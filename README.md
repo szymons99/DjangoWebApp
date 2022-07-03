@@ -1,2 +1,2 @@
-# SimpleDjangoSite
- Site about game items made with Django
+# DjangoWebApp
+ Site about game items made with Django framework
